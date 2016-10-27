@@ -1,0 +1,56 @@
+jobs
+{
+  {
+    id                       demo.strings.xml
+
+    db_source                DBI:SQLite:dbname=./serge.db3
+    db_namespace             demo
+
+    source_language          en
+    destination_languages    eu
+
+    source_dir               ./developer/en/
+    source_match             strings\.xml$
+
+    ts_file_path             ./translator/%LOCALE%/%FILE%.po
+    output_file_path         ./developer/%LOCALE%/%FILE%
+
+    parser
+    {
+      plugin                 parse_android
+    }
+
+    callback_plugins
+    {
+      :transform
+      {
+        plugin               transform
+
+        data
+        {
+          /*
+            (BOOLEAN) [OPTIONAL] Should the guessed translations be returned as
+            fuzzy? Default: YES
+          */
+          as_fuzzy_default    YES
+
+          /*
+            (ARRAY) [OPTIONAL] List of languages for which guessed translations
+            are always returned as fuzzy (despite the `as_fuzzy_default` setting)
+          */
+          as_fuzzy            ja ko
+
+          /*
+            (ARRAY) [OPTIONAL] List of languages for which guessed
+            translations are always returned as NOT fuzzy (despite the
+            `as_fuzzy_default` setting)
+          */
+          as_not_fuzzy       ca
+
+        }
+      }
+    } # end callback plugins
+
+  } # end job
+
+} # end jobs

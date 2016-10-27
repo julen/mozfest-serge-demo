@@ -1,0 +1,11 @@
+/* Name for the new note shortcut. */
+"EVENewNoteShortcutName" = "New Note";
+
+/* Name for the new photo shortcut. */
+"EVENewPhotoShortcutName" = "Take Photo";
+
+/* Name for the new reminder shortcut. */
+"EVENewReminderShortcutName" = "Set Reminder";
+
+/* Name for the search shortcut. */
+"EVESearchShortcutName" = "Search";

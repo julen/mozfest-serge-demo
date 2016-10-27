@@ -1,0 +1,54 @@
+inc
+{
+    job-common
+    {
+      db_source             DBI:SQLite:dbname=./serge.db3
+      db_namespace          demo
+
+      source_language       en
+
+      source_dir            ./developer/en/
+
+      ts_file_path          ./translator/%LOCALE%/%FILE%.po
+      output_file_path      ./developer/%LOCALE%/%FILE%
+    }
+}
+
+
+jobs
+{
+  :strings-xml
+  {
+    @inherit                 .#inc/job-common
+
+    id                       demo.strings.xml
+
+    destination_languages    fr
+
+    source_match             strings\.xml$
+
+    parser
+    {
+      plugin                 parse_android
+    }
+  }
+
+  :localizable-strings
+  {
+    @inherit                 .#inc/job-common
+
+    id                       demo.Localizable.strings
+
+    destination_languages    fr de
+
+    source_match             Localizable\.strings$
+
+    output_encoding          UTF-16LE
+    output_bom               YES
+
+    parser
+    {
+      plugin                 parse_strings
+    }
+  }
+}

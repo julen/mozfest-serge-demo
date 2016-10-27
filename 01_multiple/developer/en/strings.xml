@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Evernote</string>
+  <string name="create_account">Create Account</string>
+  <string name="create_account_caps">CREATE ACCOUNT</string>
+  <string name="plural_move_note_title">Move {N:|note|notes}</string>
+</resources>

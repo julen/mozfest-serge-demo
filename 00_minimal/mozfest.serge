@@ -1,0 +1,23 @@
+jobs
+{
+  {
+    id                       demo.strings.xml
+
+    db_source                DBI:SQLite:dbname=./serge.db3
+    db_namespace             demo
+
+    source_language          en
+    destination_languages    eu ca
+
+    source_dir               ./developer/en/
+    source_match             strings\.xml$
+
+    ts_file_path             ./translator/%LOCALE%/%FILE%.po
+    output_file_path         ./developer/%LOCALE%/%FILE%
+
+    parser
+    {
+      plugin                 parse_android
+    }
+  }
+}
