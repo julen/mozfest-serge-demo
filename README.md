@@ -1,7 +1,11 @@
 # Serge demo files
 
 This repo contains some configuration and l10n files for demoing Serge's
-`localize` step.
+`localize` step at [MozFest '16](https://mozillafestival.org/).
+
+Likewise, we are making available the [slides for the _Continuous Localization
+at Evernote_
+session](https://github.com/julen/mozfest-serge-demo/raw/master/slides/Localization_at_Evernote_Mozfest.pdf).
 
 ## Available demos
 
